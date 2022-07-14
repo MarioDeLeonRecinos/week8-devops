@@ -4,6 +4,12 @@ resource "google_compute_network" "vpc_network" {
   mtu                     = 1460
 }
 
+resource "google_compute_network" "vpc_network-test" {
+  name                    = "vpc-network-test"
+  auto_create_subnetworks = true
+  mtu                     = 1460
+}
+
 module "dns-provider" {
   source = "./modules/dns-provider"
 
